@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { User } from '../_models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,9 @@ export class AccountService {
         if(user)
         localStorage.setItem('user', JSON.stringify(user));
         this.currentUserSource.next(user);
+        return response;
       })
-    );
+    )  
   }
 
   register(model: any){
