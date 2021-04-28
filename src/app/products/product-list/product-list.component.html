@@ -1,1 +1,26 @@
-<p>product-list works!</p>
+<h1>Products</h1>
+<button class="btn btn-primary" type="button" routerLink="/product/edit">New Product</button>
+<table>
+    <thead>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Expiry</th>
+        <th>Date</th>
+        <th>Price</th>
+        <th>LastUpdatedBy</th>     
+    </thead>
+    <tr *ngFor="let item of products">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.type }}</td>
+      <td>{{ item.expiry }}</td>
+      <td>{{ item.date }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.lastUpdatedBy }}</td>
+      <td><button class="btn btn-info" routerLink="/products/{{item.id}}">View</button></td>
+    </tr>
+  </table>
+  

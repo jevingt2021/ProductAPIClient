@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ProductEditComponent } from './products/product-edit/product-edit.component';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { RegisterComponent } from './register/register.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
     children: [
       {path: 'register', component: RegisterComponent},
       {path: 'products', component: ProductListComponent},
-      {path: 'products/:id', component: ProductDetailComponent},      
+      {path: 'products/:id', component: ProductEditComponent},
+      {path: 'product/edit', component: ProductEditComponent},           
     ]  
   },
   {path: '**', component: HomeComponent, pathMatch: 'full'},
